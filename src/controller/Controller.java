@@ -17,17 +17,10 @@ public class Controller
 	
 	public void start()
 	{
-		view.println("Welcome to Story.");
-		view.println("What is your name?");
-		String name = view.nextString();
-		
-		player = new Player(this, name, 0);
-		
-		view.println("Welcome to the game " + player.getName() + "!");
-		view.println("Hope you have fun!");
-		
-		story = new Story(player, view);
-		story.start();
+		player = new Player(this, "Bob", 0);
+		player.getInventory().addItem("Sword", 50);
+		player.equip("Sword");
+		view.println(Integer.toString(player.getEquippedItem().getDurability()));
 	}
 	
 	public View getView()

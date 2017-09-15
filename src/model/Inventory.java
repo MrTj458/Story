@@ -28,6 +28,16 @@ public class Inventory
 	}
 	
 	/**
+	 * Add an item to the players inventory.
+	 * @param name
+	 * @param damage
+	 */
+	public void addItem(String name, int damage)
+	{
+		itemList.add(new Item(name, damage));
+	}
+	
+	/**
 	 * Remove the inputted item from the players inventory.
 	 * @param name
 	 */
@@ -86,5 +96,18 @@ public class Inventory
 			}
 		}
 		controller.getView().println("");
+	}
+	
+	public Item getItem(String item)
+	{
+		Item returnedItem = null;
+		for(int i = 0; i < itemList.size(); i++)
+		{
+			if(itemList.get(i).getName().equals(item))
+			{
+				returnedItem = itemList.get(i);
+			}
+		}
+		return returnedItem;
 	}
 }

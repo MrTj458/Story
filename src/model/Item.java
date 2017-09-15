@@ -30,4 +30,20 @@ public class Item
 	{
 		return name;
 	}
+	
+	/**
+	 * @return the damage of the item.
+	 */
+	public int getDamage()
+	{
+		return damage;
+	}
+	
+	/**
+	 * @return the durability of the item.
+	 */
+	public int getDurability()
+	{
+		return durability;
+	}
 }
