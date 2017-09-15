@@ -46,4 +46,9 @@ public class Item
 	{
 		return durability;
 	}
+	
+	public void damageItem(int damage)
+	{
+		this.durability -= damage;
+	}
 }
