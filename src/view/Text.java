@@ -2,7 +2,7 @@
  * @author Trevor Hodsdon
  */
 
-package model;
+package view;
 
 import java.util.Scanner;
 

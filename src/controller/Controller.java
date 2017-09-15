@@ -1,6 +1,6 @@
 package controller;
 
-import model.Text;
+import view.Text;
 
 public class Controller
 {	
