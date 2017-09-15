@@ -13,6 +13,8 @@ public class Controller
 	
 	public void start()
 	{
-		text.println("Test");
+		text.println("Write your name.");
+		String name = text.nextString();
+		text.println("Your name is " + name);
 	}
 }
