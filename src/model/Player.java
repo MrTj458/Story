@@ -10,15 +10,17 @@ public class Player
 {
 	private Controller controller;
 	private String name;
+	private int health;
 	private int score;
 	private Item equipped;
 	
 	private Inventory inventory;
 	
-	public Player(Controller controller, String name, int score)
+	public Player(Controller controller, String name, int health, int score)
 	{
 		this.controller = controller;
 		this.name = name;
+		this.health = health;
 		this.score = score;
 		
 		inventory = new Inventory(controller);
@@ -76,5 +78,20 @@ public class Player
 	public void addScore(int score)
 	{
 		this.score += score;
+	}
+	
+	public int getHealth()
+	{
+		return health;
+	}
+	
+	public void damagePlayer(int amount)
+	{
+		health -= amount;
+	}
+	
+	public void healPlayer(int amount)
+	{
+		health += amount;
 	}
 }

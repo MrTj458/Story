@@ -17,7 +17,7 @@ public class Controller
 	
 	public void start()
 	{
-		player = new Player(this, "Bob", 0);
+		player = new Player(this,"Bob", 100, 0);
 		player.getInventory().addItem("Sword", 50);
 		player.equip("Sword");
 		view.println(Integer.toString(player.getEquippedItem().getDurability()));
