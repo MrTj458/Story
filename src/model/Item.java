@@ -6,11 +6,21 @@ package model;
 
 public class Item
 {
-	String name;
+	private String name;
+	private int damage;
+	private int durability;
 	
 	public Item(String name)
 	{
 		this.name = name;
+		this.durability = 100;
+	}
+	
+	public Item(String name, int damage)
+	{
+		this.name = name;
+		this.damage = damage;
+		this.durability = 100;
 	}
 
 	/**
