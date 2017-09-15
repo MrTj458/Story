@@ -6,11 +6,11 @@ package view;
 
 import java.util.Scanner;
 
-public class Text
+public class View
 {
 	Scanner scan;
 	
-	public Text()
+	public View()
 	{
 		scan = new Scanner(System.in);
 	}

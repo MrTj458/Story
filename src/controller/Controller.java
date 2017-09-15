@@ -1,20 +1,37 @@
 package controller;
 
-import view.Text;
+import view.View;
+import model.Player;
+import model.Story;
 
 public class Controller
 {	
-	Text text;
+	private View view;
+	private Player player;
+	private Story story;
 	
 	public Controller()
 	{
-		text = new Text();
+		view = new View();
 	}
 	
 	public void start()
 	{
-		text.println("Write your name.");
-		String name = text.nextString();
-		text.println("Your name is " + name);
+		view.println("Welcome to Story.");
+		view.println("What is your name?");
+		String name = view.nextString();
+		
+		player = new Player(this, name, 0);
+		
+		view.println("Welcome to the game " + player.getName() + "!");
+		view.println("Hope you have fun!");
+		
+		story = new Story(player, view);
+		story.start();
+	}
+	
+	public View getView()
+	{
+		return view;
 	}
 }
