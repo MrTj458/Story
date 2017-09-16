@@ -25,6 +25,7 @@ public class Inventory
 	public void addItem(String name)
 	{
 		itemList.add(new Item(name));
+		controller.getView().println("Added " + name + " to inventory.");
 	}
 	
 	/**
@@ -35,6 +36,7 @@ public class Inventory
 	public void addItem(String name, int damage)
 	{
 		itemList.add(new Item(name, damage));
+		controller.getView().println("Added " + name + "to inventory with " + damage + " damage.");
 	}
 	
 	/**
@@ -50,6 +52,8 @@ public class Inventory
 				itemList.remove(i);
 			}
 		}
+		
+		controller.getView().println("Removed " + name + " from inventory.");
 	}
 	
 	/**
@@ -69,6 +73,15 @@ public class Inventory
 			}
 		}
 		
+		if(hasItem)
+		{
+			controller.getView().println("The player has a " + item + ".");
+		}
+		else
+		{
+			controller.getView().println("The player does not have a " + item + ".");
+		}
+		
 		return hasItem;
 	}
 	
@@ -77,27 +90,38 @@ public class Inventory
 	 */
 	public int numberOfItems()
 	{
+		controller.getView().println("The player has " + itemList.size() + " items.");
 		return itemList.size();
 	}
 	
 	/**
-	 * Prints all items in the players inventory neatly.
-	 * 'item1, item2, item3'
+	 * @return names of all the items in the players inventory.
 	 */
-	public void printItems()
+	public String getAllItems()
 	{
+		String result = "";
+		
 		for(int i = 0; i < itemList.size(); i++)
 		{
-			controller.getView().print(itemList.get(i).getName());
+			result += itemList.get(i).getName();
 			
 			if(i < itemList.size() - 1)
 			{
-				controller.getView().print(", ");
+				result += ", ";
 			}
 		}
-		controller.getView().println("");
+		
+		result += ".";
+		
+		controller.getView().println("Current inventory: " + result);
+		
+		return result;
 	}
 	
+	/**
+	 * @param item
+	 * @return the item you requested.
+	 */
 	public Item getItem(String item)
 	{
 		Item returnedItem = null;
@@ -108,6 +132,16 @@ public class Inventory
 				returnedItem = itemList.get(i);
 			}
 		}
+		
+		if(returnedItem != null)
+		{
+			controller.getView().println("The returned item is a " + returnedItem.getName() + ".");
+		}
+		else
+		{
+			controller.getView().println("The player does not have a " + item + ".");
+		}
+		
 		return returnedItem;
 	}
 }
