@@ -1,26 +1,26 @@
 package controller;
 
 import view.View;
+import view.Frame;
 import model.Player;
 import model.Story;
 
 public class Controller
 {	
 	private View view;
+	private Frame frame;
 	private Player player;
 	private Story story;
 	
 	public Controller()
 	{
 		view = new View();
+		frame = new Frame(this);
 	}
 	
 	public void start()
 	{
-		player = new Player(this,"Bob", 100, 0);
-		player.getInventory().addItem("Sword", 50);
-		player.equip("Sword");
-		view.println(Integer.toString(player.getEquippedItem().getDurability()));
+		
 	}
 	
 	public View getView()
