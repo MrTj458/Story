@@ -1,3 +1,7 @@
+/**
+ * @author Trevor Hodsdon
+ */
+
 package view;
 
 import java.awt.Color;

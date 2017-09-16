@@ -1,3 +1,7 @@
+/**
+ * @author Trevor Hodsdon
+ */
+
 package controller;
 
 public class Runner
